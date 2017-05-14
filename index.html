@@ -1,0 +1,15 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="shortcut icon" href="/locations-map/favicon.ico"><title>Locations map</title><script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script><script src="http://maps.google.com/maps/api/js?key=AIzaSyBFcScO56PAeIBiFEZ-HnVkjJteD2UCzag&callback"></script><link href="/locations-map/css/styles.css" rel="stylesheet"><script src="/locations-map/js/libs/handlebars-v4.0.5.js"></script><script src="/locations-map/js/libs/moment-with-locales.min.js"></script><script src="/locations-map/js/main.js"></script></head><body><div id="root"></div><div id="main" class="fit"><div id="map-holder"><div id="map" class="fit"></div></div><div id="listHolder"></div></div><script id="list-template" type="text/x-handlebars-template"><div>Count: {{count}}</div>
+      <ul id="list">
+        {{#each items}}
+        <li data-id="{{id}}">
+          <span class="event-date">
+            {{moment timestamp format="YYYY"}}<br />
+            {{moment timestamp format="DD/MM"}}
+          </span>
+          <span class="event-info time">{{moment timestamp format="HH:mm:ss"}}</span>
+          <span class="event-info ms">{{moment timestamp format="SSS"}}</span>
+          <span class="event-info latitude">{{latitude}}</span>
+          <span class="event-info longitude">{{longitude}}</span>
+        </li>
+        {{/each}}
+      </ul></script><script type="text/javascript" src="/locations-map/static/js/main.9ccf6af7.js"></script></body></html>
