@@ -102,3 +102,10 @@ body {
 
 .latitude { flex: 1 }
 .longitude { flex: 1 }
+
+#listHolder.from-file {
+    flex-basis: 450px;
+}
+.from-file .latitude { flex: 2 }
+.from-file .longitude { flex: 2 }
+.from-file .type { flex: 1 }

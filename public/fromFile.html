@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="./favicon.ico">
+    <title>Locations map</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maps.google.com/maps/api/js?key=AIzaSyBFcScO56PAeIBiFEZ-HnVkjJteD2UCzag&callback"></script>
+    <link href="./css/styles.css" rel="stylesheet">
+    <script src="./js/libs/handlebars-v4.0.5.js"></script>
+    <script src="./js/libs/moment-with-locales.min.js"></script>
+    <script src="js/main-fromFile.js"></script>
+</head>
+<body>
+<div id="root"></div>
+<div id="main" class="fit">
+    <div id="map-holder">
+        <div id="map" class="fit"></div>
+    </div>
+    <div id="listHolder" class="from-file">
+        <div class="inputHolder">
+            <input type="file" id="fileInput" />
+        </div>
+    </div>
+</div>
+<script id="list-template" type="text/x-handlebars-template">
+    <div>Count: {{count}}</div>
+    <ul id="list">
+        {{#each items}}
+        <li data-id="{{id}}">
+            <span class="event-date">
+                {{moment timestamp format="YYYY"}}<br />
+                {{moment timestamp format="DD/MM"}}
+            </span>
+            <snap class="event-info type">{{type}}</snap>
+            <span class="event-info time">{{moment timestamp format="HH:mm:ss"}}</span>
+            <span class="event-info ms">{{moment timestamp format="SSS"}}</span>
+            <span class="event-info latitude">{{latitude}}</span>
+            <span class="event-info longitude">{{longitude}}</span>
+        </li>
+        {{/each}}
+    </ul>
+</script>
+</body>
+</html>
